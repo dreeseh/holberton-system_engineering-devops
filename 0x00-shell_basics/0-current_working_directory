@@ -1,3 +1,2 @@
 #!/bin/bash
-#prints absolute present working directory
 pwd
