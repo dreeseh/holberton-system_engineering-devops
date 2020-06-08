@@ -1,2 +1,2 @@
 #!/bin/bash
-echo Chicago | cut -c 2-3,5-7 
+tr -d C,c
