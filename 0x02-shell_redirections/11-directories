@@ -1,2 +1,2 @@
 #!/bin/bash
-find . | wc -l
+ls -d1 */ | wc -l
