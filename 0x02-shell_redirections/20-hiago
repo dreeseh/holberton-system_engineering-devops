@@ -1,2 +1,2 @@
 #!/bin/bash
-echo Chicago | cut -b 2-3,5-7 
+cut -b 2-3,5-7 
