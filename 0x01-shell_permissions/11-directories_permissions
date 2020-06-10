@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R a+rxw
+chmod -R a+rxw | find / -type d
