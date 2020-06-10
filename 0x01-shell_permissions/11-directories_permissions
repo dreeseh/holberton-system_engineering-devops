@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R a+rxw | find / -type d
+find /path/to/base/dir -type d -exec chmod 755 {} \;
