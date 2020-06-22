@@ -1,2 +1,2 @@
 #!/bin/bash
-pearl -ne 'print if $.'
+awk 'NR % 2'
