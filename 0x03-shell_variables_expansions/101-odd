@@ -1,2 +1,2 @@
 #!/bin/bash
-grep "$ODDRE"
+awk 'NR%2 == 1'
