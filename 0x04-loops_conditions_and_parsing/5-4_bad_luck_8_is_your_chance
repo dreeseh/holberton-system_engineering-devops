@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# loops from 1 -10 with diferent displays
+
+x=1
+while [ $x -le 8 ]
+do
+    echo "Holberton School"
+    if [ $x -eq 3 ]
+    then
+	echo "bad luck"
+    elif [ $x -eq 6 ]
+    then
+	echo "good luck"
+    fi
+    (( x++ ))
+done

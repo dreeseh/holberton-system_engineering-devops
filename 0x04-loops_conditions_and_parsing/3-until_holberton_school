@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# prints input 10x using until
+
+x=10
+until [ $x -lt 1 ]
+do
+    echo "Holberton School"
+    ((x-=1))
+done

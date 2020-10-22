@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# displays: content of the current directory after the dash
+
+for filename in *;
+do
+    echo "$filename" | cut -d'-' -f2
+done
