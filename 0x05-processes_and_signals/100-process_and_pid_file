@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# creates a script
+sudo touch /var/run/holbertonschool.pid
+sudo bash -c "echo $$ > /var/run/holbertonschool.pid"
+
+function sigterm {
+	 echo "I hate the kill command"
+	 sudo rm /var/run/holbertonschool.pid
+	 exit
+	 }
+
+function sigint {
+	 echo "Y U no love me?"
+	 exit
+	 }
+
+function sigquit {
+	 sudo rm /var/run/holbertonschool.pid
+	 exit
+	 }
+
+trap sigterm SIGTERM
+trap sigint SIGINT
+trap sigquit SIGQUIT
+
+x=1
+while [ $x -lt 2 ]
+do
+	echo "To infinity and beyond indefinitely"
+	# sleep 2
+done
