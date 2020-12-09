@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 # Configure Nginx server so that /redirect_me is redirecting to another page.
-
 sudo apt-get update
 sudo apt-get -y install nginx
 echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
 sudo service nginx start
-newlines="\\\a rewrite ^/redirect_me
-https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
-sudo sed -i "/#error_page 404 \/404.html;/ a\\$newlines"
-/etc/nginx/sites-available/default
+newlines="\\\a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+sudo sed -i "/#error_page 404 \/404.html;/ a\\$newlines" /etc/nginx/sites-available/default
 sudo service nginx restart
 sudo service nginx reload
