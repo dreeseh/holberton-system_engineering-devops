@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# installs nginx, manages: index.html, 404-error, redirect_me & custom headers
+# shellcheck disable=SC2154
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Ceci n'est pas une page" > /va404.html
+echo "Holberton School" > /var/www/html/index.html
+sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sed -i '/listen 80 default_server/a error_page 404 /404.html;' /etc/nginx/sites-available/default
+sudo sed -i '/listen 80 default_server;/a add_header X-Served-By $hostname;' /etc/nginx/sites-available/default
+sudo service nginx restart
