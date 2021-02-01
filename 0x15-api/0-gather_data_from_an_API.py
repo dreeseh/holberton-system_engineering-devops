@@ -21,12 +21,14 @@ if __name__ == "__main__":
     dict_users = users_data.json()
     dict_todos = todo_list.json()
     employee_name = dict_users['name']
+    done_tasks = []
     completed_tasks = 0
     total_tasks = 0
 
-    for done_tasks in dict_todos:
-        if done_tasks.get('completed') is True:
+    for key in dict_todos:
+        if key.get('completed') is True:
             completed_tasks += 1
+            done_tasks.append(key.get('title'))
         total_tasks += 1
 
     print("Employee {} is done with tasks({}/{})):".format(
@@ -34,6 +36,5 @@ if __name__ == "__main__":
         completed_tasks,
         total_tasks))
 
-    for done_tasks in dict_todos:
-        if done_tasks.get('completed') is True:
-            print("\t {}".format(done_tasks.get('title')))
+    for key in done_tasks:
+        print("\t {}".format(key))
