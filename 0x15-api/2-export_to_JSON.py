@@ -32,17 +32,3 @@ dictionary = {argv[1]: todos}
 
 with open('{}.json'.format(argv[1]), mode='w') as jsonfile:
     json.dump(dictionary, jsonfile)
-
-
-
-"""
-with open('{}.csv'.format(argv[1]), mode='w') as csvfile:
-    writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
-    for key in todo_list:
-        writer.writerow([
-            key.get('userId'),
-            users_data.get('username'),
-            key.get('completed'),
-            key.get('title')
-        ])
-"""
