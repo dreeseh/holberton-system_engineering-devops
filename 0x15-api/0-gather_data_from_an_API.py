@@ -31,10 +31,10 @@ if __name__ == "__main__":
             done_tasks.append(key.get('title'))
         total_tasks += 1
 
-    print("Employee {} is done with tasks({}/{})):".format(
-        employee_name,
-        completed_tasks,
-        total_tasks))
+    print("Employee {} is done with tasks({}/{}):".
+          format(employee_name,
+                 completed_tasks,
+                 total_tasks))
 
     for key in done_tasks:
         print("\t {}".format(key))
