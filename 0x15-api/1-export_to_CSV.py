@@ -16,11 +16,9 @@ if __name__ == "__main__":
         'https://jsonplaceholder.typicode.com/todos?userId={}'.
         format(argv[1])).json()
 
-
     employee_name = users_data['name']
     completed_tasks = 0
     total_tasks = 0
-
 
     with open('{}.csv'.format(argv[1]), mode='w') as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
