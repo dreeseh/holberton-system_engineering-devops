@@ -4,9 +4,8 @@ https://jsonplaceholder.typicode.com/
 for a given employee ID,
 returns information about his/her TODO list progress.
 """
-import requests
 from sys import argv
-
+import requests
 
 employee_id = argv[1]
 
@@ -18,11 +17,10 @@ todo_list = requests.get(
     'https://jsonplaceholder.typicode.com/todos?userId={}'.
     format(employee_id))
 
-completed_tasks = 0
-
 dict_users = users_data.json()
 dict_todos = todo_list.json()
 employee_name = dict_users['name']
+completed_tasks = 0
 total_tasks = 0
 
 for done_tasks in dict_todos:
