@@ -1,6 +1,6 @@
 # Change the OS configuration so that it is
 
 exec {'increase OS limits':
-  command => "sed -i 's/worker_processes 4;/worker_processes 8;/g' /etc/security/limits.conf; sudo service nginx restart",
-  path    => ['/bin', '/usr/bin']
+  command => 'sudo sed -i "s/5/3000/g; s/4/3000/g" /etc/security/limits.conf',
+  path    => '/bin:/usr/bin:/usr/sbin:/sbin',
 }
